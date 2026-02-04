@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resume Submission</title>
+    
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+          }
+    
+          .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+          }
+    
+          .header {
+            background-color: #4e5ba6;
+            padding: 20px;
+            text-align: center;
+            color: white;
+          }
+    
+          .header img {
+            max-width: 150px;
+          }
+    
+          .content {
+            text-align: center;
+            padding: 20px;
+          }
+    
+          .content h1 {
+            font-size: 24px;
+            color: #333;
+          }
+    
+          .content p {
+            font-size: 16px;
+            color: #666;
+          }
+    
+          .details-table {
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+            border-collapse: collapse;
+          }
+    
+          .details-table th,
+          .details-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+          }
+    
+          .details-table th {
+            background-color: #4e5ba6;
+            color: white;
+          }
+    
+          .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #999;
+          }
+    
+          .footer a {
+            color: #ff3399;
+            text-decoration: none;
+          }
+    
+          .contact {
+            margin-top: 20px;
+          }
+    
+          .contact p {
+            margin: 5px 0;
+          }
+    
+          .contact a {
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+          }
+    
+          .contact a:hover {
+            text-decoration: underline;
+          }
+        </style>
+      </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://mydevpartner.s3.us-east-1.amazonaws.com/uploads/logo.png" alt="Company Logo" />
+            <h1>Resume Submission</h1>
+        </div>
+        <div class="content">
+            <h1>Resume Submitted!</h1>
+            <p>A candidate has submitted their resume for review. Below are the basic details:</p>
+            <table class="details-table">
+                <thead>
+                    <tr>
+                        <th>Details</th>
+                        <th>Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Name:</strong></td>
+                        <td><%= fullName %></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email:</strong></td>
+                        <td><%= emailAddress %></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phone Number:</strong></td>
+                        <td><%= phoneNumber %></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Experience:</strong></td>
+                        <td><%= totalExperience %> years</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="contact">
+                <p>If you need more information or have questions,</p>
+                <a style="text-decoration: underline;" href="mailto:hr@gohashinclude.com">Contact the HR team</a>.
+            </div>
+        </div>
+        <div class="footer">
+            <p>GOHASHINCLUDE</p>
+            <p>Nirman Nagar E, P.No.-31 1st Floor, Shree Krishna Tower, Ajmer Rd, opp. Asopa Hospital, Jaipur, Rajasthan 302024</p>
+            <p>Copyright © GOHASHINCLUDE. All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>

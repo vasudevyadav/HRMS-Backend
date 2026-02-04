@@ -1,0 +1,3759 @@
+{
+	"info": {
+		"_postman_id": "6d6f0670-7f02-4bca-97d6-10f3b25c5e4a",
+		"name": "HRMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12560518",
+		"_collection_link": "https://speeding-sunset-193719.postman.co/workspace/Bakery~ca29c722-122d-464f-a48a-d57ec34c867f/collection/12560518-6d6f0670-7f02-4bca-97d6-10f3b25c5e4a?action=share&source=collection_link&creator=12560518"
+	},
+	"item": [
+		{
+			"name": "SUPER-ADMIN",
+			"item": [
+				{
+					"name": "Super Admin Auth || Prefix: super-admin",
+					"item": [
+						{
+							"name": "Super Admin Login || Prefix: super-admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"superadmin@gmail.com\",\r\n    \"password\":\"Admin@123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/auth/login",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\":\"superadmin@gmail.com\",\r\n    \"password\":\"Superadmin@123\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/login",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "506"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1fa-u5FlpwI1ogc1HN2y98osCPixjSw\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 01 Aug 2024 07:29:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Login Successful\",\n    \"data\": {\n        \"username\": \"SUPER_ADMIN\",\n        \"createdAt\": \"2024-08-01T06:23:33.122Z\",\n        \"email\": \"superadmin@gmail.com\",\n        \"isActive\": true,\n        \"isDeleted\": false,\n        \"loginRetryLimit\": 1,\n        \"updatedAt\": \"2024-08-01T07:28:59.908Z\",\n        \"userType\": 1,\n        \"id\": \"66ab29e752cead52ddc6fa86\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWIyOWU3NTJjZWFkNTJkZGM2ZmE4NiIsInVzZXJuYW1lIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3MjI0OTczNDMsImV4cCI6MTcyMzA5NzM0M30.jlUFsE7k8BEoplf01TRGxHMRIpDGP_zK8LlnU58uyQo\"\n    }\n}"
+								},
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\":\"superadmin@gmail.com\",\r\n    \"password\":\"Superadmin@1231\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/login",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "67"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"43-X5GCO0WBQe3KOKQzEFSD9LLfoK8\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 01 Aug 2024 07:29:29 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Incorrect Password\",\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Forgot Password || Prefix: super-admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"superadmin@gmail.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/auth/forgot-password",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"auth",
+										"forgot-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "RECORD_NOT_FOUND RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"superadmin@gmail.com1\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/forgot-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"forgot-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "98"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"62-KXqVcyZ4DnWRYIzWFio80hVyxBU\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 01 Aug 2024 08:41:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"RECORD_NOT_FOUND\",\n    \"message\": \"Record(s) not found with specified criteria.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCES  RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"superadmin@gmail.com\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/forgot-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"forgot-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "157"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"9d-GOXhHugvDo54l3RtYI5fc9VNLvw\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 01 Aug 2024 08:41:48 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \" Please check your inbox. we have sent you the password reset steps.\",\n    \"data\": {\n        \"token\": \"4cf6aaf8-809d-4ae5-a4d6-63cde4818d5d\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Validate Reset Password || Prefix: super-admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\":\"8fc4f3cd-159a-40d2-aec8-aa5159b121af\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/auth/validate-reset-password",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"auth",
+										"validate-reset-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/validate-reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"validate-reset-password"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "100"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"64-rTspTaajc4t28KqDP6OsxhuXrPs\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:46:45 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Insufficient request parameters! token is required.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"7348d3d4-fd54-4b00-92cb-43a940b9b98cc\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/validate-reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"validate-reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "57"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"39-OrH4BYYkFIKTJRybs+0lcjZHXPs\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:47:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"Invalid Link\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"7348d3d4-fd54-4b00-92cb-43a940b9b98c\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/validate-reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"validate-reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "55"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37-PZSAHhg0LQ5DVL8aaVotOT52ZEE\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:47:53 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Valid Link\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"509fb788-ba58-4ace-ab74-d734beb652b7\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/validate-reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"validate-reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "91"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5b-ZzyecmUCqSubPs9/F0Jvth4EJPU\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:59:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"Your reset password link is expired or invalid\",\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Reset Password",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\":\"46576dff-7be8-4bd0-989d-693bb11bc557\",\r\n    \"newPassword\":\"Rahul@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/auth/reset-password",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"reset-password"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "116"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"74-m1DG6f8B2IwcPTNGsVOU29tKhms\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:52:07 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Insufficient request parameters! token and newPassword is required.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"509fb788-ba58-4ace-ab74-d734beb652b7\",\r\n    \"newPassword\":\"Rahul@123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "91"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5b-ZzyecmUCqSubPs9/F0Jvth4EJPU\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 11:01:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"Your reset password link is expired or invalid\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"b3772c51-727b-4416-8185-204c682d01c4\",\r\n    \"newPassword\":\"Rahul@123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "72"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"48-6pLh9WdYNEyaCI7sG51J3ZIOC1o\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 11:03:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Password reset successfully\",\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Get User Details",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWIyOWU3NTJjZWFkNTJkZGM2ZmE4NiIsInVzZXJuYW1lIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3MjI1MDI5MzAsImV4cCI6MTcyMzEwMjkzMH0.vO_nVRFc5WtAYt0XkJg5Y9sNNfOyx2PJufLE-kEKsQQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/auth/get-user-details",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"auth",
+										"get-user-details"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWIyOWU3NTJjZWFkNTJkZGM2ZmE4NiIsInVzZXJuYW1lIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3MjI1MDI5MzAsImV4cCI6MTcyMzEwMjkzMH0.vO_nVRFc5WtAYt0XkJg5Y9sNNfOyx2PJufLE-kEKsQQ",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/get-user-details",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"get-user-details"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "180"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b4-tlcMINBScoEsFxSEiKf7CRo/0zs\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 01 Aug 2024 09:09:12 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Your request is successfully executed\",\n    \"data\": {\n        \"username\": \"SUPER_ADMIN\",\n        \"email\": \"superadmin@gmail.com\",\n        \"userType\": 1,\n        \"id\": \"66ab29e752cead52ddc6fa86\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWIyOWU3NTJjZWFkNTJkZGM2ZmE4NiIsInVzZXJuYW1lIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3MjI1MDI5MzAsImV4cCI6MTcyMzEwMjkzMH0.vO_nVRFc5WtAYt0XkJg5Y9sNNfOyx2PJufLE-kEKsQQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"oldPassword\":\"Rahul@123\",\r\n    \"newPassword\":\"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/auth/change-password",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"auth",
+										"change-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"oldPassword\":\"Admin@123\",\r\n    \"newPassword\":\"New@123\",\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0NWEwNzdjLWVmODMtNDM0MC05OWRmLWNiNDk2NmU3NmJjYSIsInVzZXJuYW1lIjoiQWRtaW4iLCJpYXQiOjE3MTEwMjM5MjUsImV4cCI6MTcxMTYyMzkyNX0.V5SvoyrvLRqvA2XPL_W2_aLfbwWlBmNc8J0p7-swatc\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/change-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"change-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"46-7Q0D63IL6TIxPEHOgyG+xhRewtg\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 28 Mar 2024 05:05:33 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"Old password is incorrect\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"oldPassword\":\"New@123\",\r\n    \"newPassword\":\"Admin@123\",\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0NWEwNzdjLWVmODMtNDM0MC05OWRmLWNiNDk2NmU3NmJjYSIsInVzZXJuYW1lIjoiQWRtaW4iLCJpYXQiOjE3MTEwMjM5MjUsImV4cCI6MTcxMTYyMzkyNX0.V5SvoyrvLRqvA2XPL_W2_aLfbwWlBmNc8J0p7-swatc\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/change-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"change-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "75"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4b-KM3YyidrlGQFmjpz8ECHCnMMeRY\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 28 Mar 2024 05:05:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Password updated successfully.\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Employee || Prefix: employee",
+					"item": [
+						{
+							"name": "Step 1 :Create Employee || Prefix: employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Brock\",\r\n    \"dob\": \"2024-08-01T18:30:00.000Z\",\r\n    \"employeeCode\": \"Consequatur enim est\",\r\n    \"departmentName\": {\r\n        \"_id\": \"a1c345e2-69b5-413b-94b9-b82a33c8c7b1\",\r\n        \"label\": \"Sales\"\r\n    },\r\n    \"designation\": \"Autem rem obcaecati \",\r\n    \"aadhaarNumber\": \"21\",\r\n    \"maritalStatus\": {\r\n        \"_id\": \"a5bcdc02-b448-46f0-a3d2-e390746e6bf1\",\r\n        \"label\": \"Single\"\r\n    },\r\n    \"religion\": {\r\n        \"_id\": \"a3031576-f5c2-41a2-8eb6-8199ded98991\",\r\n        \"label\": \"Hindu\"\r\n    },\r\n    \"castCategory\": {\r\n        \"_id\": \"3f275f4a-18b5-469b-a4f2-db5762bd8858\",\r\n        \"label\": \"OBC\"\r\n    },\r\n    \"dateOfProfession\": \"2024-08-12T18:30:00.000Z\",\r\n    \"dateOfJoining\": \"2024-08-09T18:30:00.000Z\",\r\n    \"primaryNumber\": \"164\",\r\n    \"secondaryNumber\": \"400\",\r\n    \"primaryEmail\": \"hixykoxe@mailinator.com\",\r\n    \"secondaryEmail\": \"hixykoxe@mailinator.com\",\r\n    \"emergencyContactNumber\": \"547\",\r\n    \"gender\": \"\",\r\n    \"stepNumber\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"employee",
+										"create-employee"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"dob\": \"1990-05-15\",\r\n  \"empCode\": \"EMP12345\",\r\n  \"departmentName\": \"Engineering\",\r\n  \"designation\": \"Software Engineer\",\r\n  \"departmentId\": \"64cba0f4e6c9c8b0ff6e1d1a\",\r\n  \"aadharNumber\": \"1234-5678-9101\",\r\n  \"maritalStatus\": \"Single\",\r\n  \"religion\": \"Hindu\",\r\n  \"castCategory\": \"General\",\r\n  \"dateOfProfession\": \"2015-07-01T00:00:00.000Z\",\r\n  \"dateOfJoining\": \"2020-01-15T00:00:00.000Z\",\r\n  \"primaryNumber\": \"9876543210\",\r\n  \"secondaryNumber\": \"8765432109\",\r\n  \"primaryEmail\": \"john.doe@example.com\",\r\n  \"secondaryEmail\": \"john.secondary@example.com\",\r\n  \"contactNumber\": \"9988776655\",\r\n  \"gender\": \"male\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}employee"
+											],
+											"path": [
+												"create-employee"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "131"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"83-hMtE/32ZSG1rvIamgK3YsPawsJs\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 09:21:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Insufficient request parameters! empCode, primaryNumber, primaryEmail is required.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"dob\": \"1990-05-15\",\r\n  \"empCode\": \"EMP12345\",\r\n  \"departmentName\": \"Engineering\",\r\n  \"designation\": \"Software Engineer\",\r\n  \"departmentId\": \"abc\",\r\n  \"aadharNumber\": \"1234-5678-9101\",\r\n  \"maritalStatus\": \"Single\",\r\n  \"religion\": \"Hindu\",\r\n  \"castCategory\": \"General\",\r\n  \"dateOfProfession\": \"2015-07-01T00:00:00.000Z\",\r\n  \"dateOfJoining\": \"2020-01-15T00:00:00.000Z\",\r\n  \"primaryNumber\": \"9876543210\",\r\n  \"secondaryNumber\": \"8765432109\",\r\n  \"primaryEmail\": \"john.doe@example.com\",\r\n  \"secondaryEmail\": \"john.secondary@example.com\",\r\n  \"contactNumber\": \"9988776655\",\r\n  \"gender\": \"male\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}employee"
+											],
+											"path": [
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "881"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"371-5UI2Am5ZWl2SHtQsUzpoi7p1d9s\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 09:30:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Employee Added Successfully\",\n    \"data\": {\n        \"messageType\": \"insert\",\n        \"token\": \"66aca741533203095a08a029\",\n        \"lastData\": {\n            \"firstName\": \"John\",\n            \"dob\": \"1990-05-15\",\n            \"empCode\": \"EMP12345\",\n            \"departmentName\": \"Engineering\",\n            \"designation\": \"Software Engineer\",\n            \"aadharNumber\": \"1234-5678-9101\",\n            \"maritalStatus\": \"Single\",\n            \"religion\": \"Hindu\",\n            \"castCategory\": \"General\",\n            \"dateOfProfession\": \"2015-07-01T00:00:00.000Z\",\n            \"dateOfJoining\": \"2020-01-15T00:00:00.000Z\",\n            \"primaryNumber\": \"9876543210\",\n            \"secondaryNumber\": \"8765432109\",\n            \"primaryEmail\": \"john.doe@example.com\",\n            \"secondaryEmail\": \"john.secondary@example.com\",\n            \"contactNumber\": \"9988776655\",\n            \"gender\": \"male\",\n            \"password\": \"513eb3cf94dfe285dcbd0f6d6c0d1cef\",\n            \"setpNumber\": 1,\n            \"userType\": 2,\n            \"loginRetryLimit\": 0,\n            \"createdAt\": \"2024-08-02T09:30:41.980Z\",\n            \"updatedAt\": \"2024-08-02T09:30:41.980Z\",\n            \"isDeleted\": false,\n            \"isActive\": true,\n            \"id\": \"66aca741533203095a08a029\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Step 2 : Create Employee || Prefix: employee Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"66adff330def14fba4d0d3ea\",\r\n  \"currentAddressLine1\": \"123 Main St\",\r\n  \"currentAddressLine2\": \"Apt 4B\",\r\n  \"currentCountryId\": \"64c7b1f7c19a0b6c1f789001\",\r\n  \"currentStateId\": \"64c7b1f7c19a0b6c1f789002\",\r\n  \"currentPincode\": \"123456\",\r\n  \"currentCityName\": \"123456\",\r\n  \"sameAsPermanent\": false,\r\n  \"permanentAddressLine1\": \"456 Elm St\",\r\n  \"permanentAddressLine2\": \"Suite 7\",\r\n  \"permanentCountryId\": \"64c7b1f7c19a0b6c1f789001\",\r\n  \"permanentStateId\": \"64c7b1f7c19a0b6c1f789003\",\r\n  \"permanentPincode\": \"654321\",\r\n  \"permanentCityName\": \"654321\",\r\n  \"stepNumber\": \"2\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"employee",
+										"create-employee"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"dob\": \"1990-05-15\",\r\n  \"empCode\": \"EMP12345\",\r\n  \"departmentName\": \"Engineering\",\r\n  \"designation\": \"Software Engineer\",\r\n  \"departmentId\": \"64cba0f4e6c9c8b0ff6e1d1a\",\r\n  \"aadharNumber\": \"1234-5678-9101\",\r\n  \"maritalStatus\": \"Single\",\r\n  \"religion\": \"Hindu\",\r\n  \"castCategory\": \"General\",\r\n  \"dateOfProfession\": \"2015-07-01T00:00:00.000Z\",\r\n  \"dateOfJoining\": \"2020-01-15T00:00:00.000Z\",\r\n  \"primaryNumber\": \"9876543210\",\r\n  \"secondaryNumber\": \"8765432109\",\r\n  \"primaryEmail\": \"john.doe@example.com\",\r\n  \"secondaryEmail\": \"john.secondary@example.com\",\r\n  \"contactNumber\": \"9988776655\",\r\n  \"gender\": \"male\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}employee"
+											],
+											"path": [
+												"create-employee"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "131"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"83-hMtE/32ZSG1rvIamgK3YsPawsJs\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 09:21:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Insufficient request parameters! empCode, primaryNumber, primaryEmail is required.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"dob\": \"1990-05-15\",\r\n  \"empCode\": \"EMP12345\",\r\n  \"departmentName\": \"Engineering\",\r\n  \"designation\": \"Software Engineer\",\r\n  \"departmentId\": \"abc\",\r\n  \"aadharNumber\": \"1234-5678-9101\",\r\n  \"maritalStatus\": \"Single\",\r\n  \"religion\": \"Hindu\",\r\n  \"castCategory\": \"General\",\r\n  \"dateOfProfession\": \"2015-07-01T00:00:00.000Z\",\r\n  \"dateOfJoining\": \"2020-01-15T00:00:00.000Z\",\r\n  \"primaryNumber\": \"9876543210\",\r\n  \"secondaryNumber\": \"8765432109\",\r\n  \"primaryEmail\": \"john.doe@example.com\",\r\n  \"secondaryEmail\": \"john.secondary@example.com\",\r\n  \"contactNumber\": \"9988776655\",\r\n  \"gender\": \"male\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}employee"
+											],
+											"path": [
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "881"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"371-5UI2Am5ZWl2SHtQsUzpoi7p1d9s\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 09:30:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Employee Added Successfully\",\n    \"data\": {\n        \"messageType\": \"insert\",\n        \"token\": \"66aca741533203095a08a029\",\n        \"lastData\": {\n            \"firstName\": \"John\",\n            \"dob\": \"1990-05-15\",\n            \"empCode\": \"EMP12345\",\n            \"departmentName\": \"Engineering\",\n            \"designation\": \"Software Engineer\",\n            \"aadharNumber\": \"1234-5678-9101\",\n            \"maritalStatus\": \"Single\",\n            \"religion\": \"Hindu\",\n            \"castCategory\": \"General\",\n            \"dateOfProfession\": \"2015-07-01T00:00:00.000Z\",\n            \"dateOfJoining\": \"2020-01-15T00:00:00.000Z\",\n            \"primaryNumber\": \"9876543210\",\n            \"secondaryNumber\": \"8765432109\",\n            \"primaryEmail\": \"john.doe@example.com\",\n            \"secondaryEmail\": \"john.secondary@example.com\",\n            \"contactNumber\": \"9988776655\",\n            \"gender\": \"male\",\n            \"password\": \"513eb3cf94dfe285dcbd0f6d6c0d1cef\",\n            \"setpNumber\": 1,\n            \"userType\": 2,\n            \"loginRetryLimit\": 0,\n            \"createdAt\": \"2024-08-02T09:30:41.980Z\",\n            \"updatedAt\": \"2024-08-02T09:30:41.980Z\",\n            \"isDeleted\": false,\n            \"isActive\": true,\n            \"id\": \"66aca741533203095a08a029\"\n        }\n    }\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66acd8b5b653c8c6498e052f\",\r\n  \"address1\": \"123 Main St\",\r\n  \"address2\": \"Apt 4B\",\r\n  \"countryId\": \"64c7b1f7c19a0b6c1f789001\",\r\n  \"stateId\": \"64c7b1f7c19a0b6c1f789002\",\r\n  \"pincode\": \"123456\",\r\n  \"cityName\": \"123456\",\r\n  \"sameAsPermanent\": true,\r\n  \"permanentAddress1\": \"456 Elm St\",\r\n  \"permanentAddress2\": \"Suite 7\",\r\n  \"permanentCountryId\": \"64c7b1f7c19a0b6c1f789001\",\r\n  \"permanentStateId\": \"64c7b1f7c19a0b6c1f789003\",\r\n  \"permanentPincode\": \"654321\",\r\n  \"permanentCityName\": \"654321\",\r\n  \"stepNumber\": \"2\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}employee"
+											],
+											"path": [
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "499"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f3-uenUbD35j+a3/h3z/YTytQD2Kgo\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 13:09:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Address Updated Successfully\",\n    \"data\": {\n        \"address1\": \"123 Main St\",\n        \"address2\": \"Apt 4B\",\n        \"cityName\": \"123456\",\n        \"countryId\": \"64c7b1f7c19a0b6c1f789001\",\n        \"stateId\": \"64c7b1f7c19a0b6c1f789002\",\n        \"pincode\": \"123456\",\n        \"sameAsPermanent\": true,\n        \"permanentAddress1\": \"123 Main St\",\n        \"permanentAddress2\": \"Apt 4B\",\n        \"permanentCityName\": \"654321\",\n        \"permanentCountryId\": \"64c7b1f7c19a0b6c1f789001\",\n        \"permanentStateId\": \"64c7b1f7c19a0b6c1f789002\",\n        \"permanentPincode\": \"123456\",\n        \"id\": \"66acd8b5b653c8c6498e052f\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Step 3 : Create Employee || Prefix: employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"66adff330def14fba4d0d3ea\",\r\n  \"esiNumber\": \"1234567890\",\r\n  \"pfNumber\": \"MH/123/1234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"employee",
+										"create-employee"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890s\",\r\n  \"pfNumber\": \"MH/123/1234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "72"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"48-g41bUFz3xLunMOrQ/ypHFIydlC0\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:22:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"stepNumber is required.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890s\",\r\n  \"pfNumber\": \"MH/123/1234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "106"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"6a-E29xt7VoWGMDFjcn8sit6kQAeqA\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:22:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"ESI number is invalid. It should be a 10-digit numeric value.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890\",\r\n  \"pfNumber\": \"MH/1231234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "112"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"70-IfIAuAip4YTk4r13SYKOtqdgKrk\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:22:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"PF number is invalid. It should follow one of the accepted formats.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890\",\r\n  \"pfNumber\": \"MH/123/1234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "218"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"da-GlO6rnBZmtc5KevlkWa1WC0BTAw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:23:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Others Details Updated Successfully\",\n    \"data\": {\n        \"esiNumber\": \"1234567890\",\n        \"pfNumber\": \"MH/123/1234567\",\n        \"perMonthSalary\": \"50000\",\n        \"monthYearSalary\": \"aug - 2024\",\n        \"id\": \"66adc410606c79410e0758a3\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Step 4 : Create Employee || Prefix: employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"66adff330def14fba4d0d3ea\",\r\n  \"bankName\": \"State Bank of India\",\r\n  \"accountHolderName\": \"John Doe\",\r\n  \"accountNumber\": \"1234567890\",\r\n  \"ifscCode\": \"SBIN0001234\",\r\n  \"branch\": \"Main Branch\",\r\n  \"stepNumber\": \"4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"employee",
+										"create-employee"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890s\",\r\n  \"pfNumber\": \"MH/123/1234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "72"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"48-g41bUFz3xLunMOrQ/ypHFIydlC0\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:22:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"stepNumber is required.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890s\",\r\n  \"pfNumber\": \"MH/123/1234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "106"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"6a-E29xt7VoWGMDFjcn8sit6kQAeqA\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:22:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"ESI number is invalid. It should be a 10-digit numeric value.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890\",\r\n  \"pfNumber\": \"MH/1231234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "112"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"70-IfIAuAip4YTk4r13SYKOtqdgKrk\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:22:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"PF number is invalid. It should follow one of the accepted formats.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66add383622e081e6e271180\",\r\n  \"bankName\": \"State Bank of India\",\r\n  \"accountHolderName\": \"John Doe\",\r\n  \"accountNumber\": \"1234567890\",\r\n  \"ifscCode\": \"SBIN0001234\",\r\n  \"branch\": \"Main Branch\",\r\n  \"stepNumber\": \"4\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "248"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f8-+D+LZECV1WZO9EYOOXataLtDpfk\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:53:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Bank Details Updated Successfully\",\n    \"data\": {\n        \"bankName\": \"State Bank of India\",\n        \"accountHolderName\": \"John Doe\",\n        \"accountNumber\": \"1234567890\",\n        \"ifscCode\": \"SBIN0001234\",\n        \"branch\": \"Main Branch\",\n        \"id\": \"66add383622e081e6e271180\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Step 5 : Create Employee || Prefix: employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"66adff330def14fba4d0d3ea\",\r\n  \"document\":[\r\n    {\r\n        \"documentName\":\"PAN CARD\",\r\n        \"documentFileName\":\"1722679283094.png\"\r\n    }\r\n  ],\r\n  \"stepNumber\": \"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"employee",
+										"create-employee"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890s\",\r\n  \"pfNumber\": \"MH/123/1234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "72"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"48-g41bUFz3xLunMOrQ/ypHFIydlC0\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:22:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"stepNumber is required.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890s\",\r\n  \"pfNumber\": \"MH/123/1234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "106"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"6a-E29xt7VoWGMDFjcn8sit6kQAeqA\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:22:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"ESI number is invalid. It should be a 10-digit numeric value.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66adc410606c79410e0758a3\",\r\n  \"esiNumber\": \"1234567890\",\r\n  \"pfNumber\": \"MH/1231234567\",\r\n  \"perMonthSalary\": \"50000\",\r\n  \"monthYearSalary\": \"aug - 2024\",\r\n  \"stepNumber\": \"3\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "112"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"70-IfIAuAip4YTk4r13SYKOtqdgKrk\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 06:22:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"PF number is invalid. It should follow one of the accepted formats.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"66add383622e081e6e271180\",\r\n  \"document\":[\r\n    {\r\n        \"documentName\":\"PAN CARD\",\r\n        \"documentFileName\":\"1722678111335.png\"\r\n    }\r\n  ],\r\n  \"stepNumber\": \"5\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/create-employee",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"create-employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "256"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"100-77q0VOr2JapJOn1HUh7KQfl1Xic\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 09:44:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Document Details Updated Successfully\",\n    \"data\": {\n        \"document\": [\n            {\n                \"documentName\": \"PAN CARD\",\n                \"documentFileName\": \"1722678111335.png\",\n                \"_id\": \"66adfbfa7d65423f8e88ca82\",\n                \"id\": \"66adfbfa7d65423f8e88ca82\"\n            }\n        ],\n        \"id\": \"66add383622e081e6e271180\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Employee Details || Prefix: super-admin/employee",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}super-admin/employee/get-employee-details/66adff330def14fba4d0d3ea",
+									"host": [
+										"{{BASE_URL}}{{API}}super-admin"
+									],
+									"path": [
+										"employee",
+										"get-employee-details",
+										"66adff330def14fba4d0d3ea"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/employee/get-employee-details/66adff330def14fba4d0d3ea",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"employee",
+												"get-employee-details",
+												"66adff330def14fba4d0d3ea"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1808"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"710-jlRk0MjLVh+UgeKfqKWm4s8eKPw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 10:34:33 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Your request is successfully executed\",\n    \"data\": {\n        \"_id\": \"66adff330def14fba4d0d3ea\",\n        \"firstName\": \"Brock\",\n        \"dob\": \"2024-08-01T18:30:00.000Z\",\n        \"employeeCode\": \"Consequatur enim est\",\n        \"departmentName\": \"a1c345e2-69b5-413b-94b9-b82a33c8c7b1\",\n        \"designation\": \"Autem rem obcaecati \",\n        \"aadharNumber\": \"\",\n        \"maritalStatus\": \"a5bcdc02-b448-46f0-a3d2-e390746e6bf1\",\n        \"religion\": \"a3031576-f5c2-41a2-8eb6-8199ded98991\",\n        \"castCategory\": \"3f275f4a-18b5-469b-a4f2-db5762bd8858\",\n        \"dateOfProfession\": \"2024-08-12T18:30:00.000Z\",\n        \"dateOfJoining\": \"2024-08-09T18:30:00.000Z\",\n        \"primaryNumber\": \"164\",\n        \"secondaryNumber\": \"400\",\n        \"primaryEmail\": \"hixykoxe@mailinator.com\",\n        \"secondaryEmail\": \"hixykoxe@mailinator.com\",\n        \"emergencyContactNumber\": \"547\",\n        \"gender\": \"\",\n        \"setpNumber\": 0,\n        \"completedStep\": \"1,5,2,3,4\",\n        \"userType\": 2,\n        \"currentAddressLine1\": \"123 Main St\",\n        \"currentAddressLine2\": \"Apt 4B\",\n        \"currentCityName\": \"123456\",\n        \"currentCountryId\": {\n            \"_id\": \"64c7b1f7c19a0b6c1f789001\",\n            \"countryName\": \"United States\"\n        },\n        \"currentStateId\": {\n            \"_id\": \"64c7b1f7c19a0b6c1f789002\",\n            \"stateName\": \"Alabama\"\n        },\n        \"currentPincode\": \"123456\",\n        \"sameAsPermanent\": false,\n        \"permanentAddressLine1\": \"456 Elm St\",\n        \"permanentAddressLine2\": \"Suite 7\",\n        \"permanentCityName\": \"654321\",\n        \"permanentCountryId\": {\n            \"_id\": \"64c7b1f7c19a0b6c1f789001\",\n            \"countryName\": \"United States\"\n        },\n        \"permanentStateId\": {\n            \"_id\": \"64c7b1f7c19a0b6c1f789003\",\n            \"stateName\": \"Alaska\"\n        },\n        \"permanentPincode\": \"654321\",\n        \"esiNumber\": \"1234567890\",\n        \"pfNumber\": \"MH/123/1234567\",\n        \"perMonthSalary\": \"50000\",\n        \"monthYearSalary\": \"aug - 2024\",\n        \"bankName\": \"State Bank of India\",\n        \"accountHolderName\": \"John Doe\",\n        \"accountNumber\": \"1234567890\",\n        \"ifscCode\": \"SBIN0001234\",\n        \"branch\": \"Main Branch\",\n        \"isActive\": true,\n        \"document\": [\n            {\n                \"documentName\": \"PAN CARD\",\n                \"documentFileName\": \"1722679283094.png\",\n                \"_id\": \"66ae039367ecda244b4c0a35\"\n            }\n        ],\n        \"createdAt\": \"2024-08-03T09:58:11.903Z\",\n        \"__v\": 0\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Common Dropdown APIS",
+					"item": [
+						{
+							"name": "Country List || Prefix:",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}get-country-list",
+									"host": [
+										"{{BASE_URL}}{{API}}get-country-list"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}get-country-list",
+											"host": [
+												"{{BASE_URL}}{{API}}get-country-list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "235"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"eb-FglOWrYU0RWgAQF0ghEb97Pz02I\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 12:10:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Country List\",\n    \"data\": [\n        {\n            \"countryName\": \"United States\",\n            \"id\": \"64c7b1f7c19a0b6c1f789001\"\n        },\n        {\n            \"countryName\": \"Canada\",\n            \"id\": \"64c7b1f7c19a0b6c1f789034\"\n        },\n        {\n            \"countryName\": \"Australia\",\n            \"id\": \"64c7b1f7c19a0b6c1f78903f\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "State List || Prefix:",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"countryId\":\"64c7b1f7c19a0b6c1f789001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}get-state-list",
+									"host": [
+										"{{BASE_URL}}{{API}}get-state-list"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"countryId\":\"64c7b1f7c19a0b6c1f789001\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}get-state-list",
+											"host": [
+												"{{BASE_URL}}{{API}}get-state-list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2924"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b6c-Q83cgpp8WzO+CzXtTOa6rztyF00\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 12:14:21 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"State List\",\n    \"data\": [\n        {\n            \"stateName\": \"Alabama\",\n            \"id\": \"64c7b1f7c19a0b6c1f789002\"\n        },\n        {\n            \"stateName\": \"Alaska\",\n            \"id\": \"64c7b1f7c19a0b6c1f789003\"\n        },\n        {\n            \"stateName\": \"Arizona\",\n            \"id\": \"64c7b1f7c19a0b6c1f789004\"\n        },\n        {\n            \"stateName\": \"Arkansas\",\n            \"id\": \"64c7b1f7c19a0b6c1f789005\"\n        },\n        {\n            \"stateName\": \"California\",\n            \"id\": \"64c7b1f7c19a0b6c1f789006\"\n        },\n        {\n            \"stateName\": \"Colorado\",\n            \"id\": \"64c7b1f7c19a0b6c1f789007\"\n        },\n        {\n            \"stateName\": \"Connecticut\",\n            \"id\": \"64c7b1f7c19a0b6c1f789008\"\n        },\n        {\n            \"stateName\": \"Delaware\",\n            \"id\": \"64c7b1f7c19a0b6c1f789009\"\n        },\n        {\n            \"stateName\": \"Florida\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900a\"\n        },\n        {\n            \"stateName\": \"Georgia\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900b\"\n        },\n        {\n            \"stateName\": \"Hawaii\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900c\"\n        },\n        {\n            \"stateName\": \"Idaho\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900d\"\n        },\n        {\n            \"stateName\": \"Illinois\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900e\"\n        },\n        {\n            \"stateName\": \"Indiana\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900f\"\n        },\n        {\n            \"stateName\": \"Iowa\",\n            \"id\": \"64c7b1f7c19a0b6c1f789010\"\n        },\n        {\n            \"stateName\": \"Kansas\",\n            \"id\": \"64c7b1f7c19a0b6c1f789011\"\n        },\n        {\n            \"stateName\": \"Kentucky\",\n            \"id\": \"64c7b1f7c19a0b6c1f789012\"\n        },\n        {\n            \"stateName\": \"Louisiana\",\n            \"id\": \"64c7b1f7c19a0b6c1f789013\"\n        },\n        {\n            \"stateName\": \"Maine\",\n            \"id\": \"64c7b1f7c19a0b6c1f789014\"\n        },\n        {\n            \"stateName\": \"Maryland\",\n            \"id\": \"64c7b1f7c19a0b6c1f789015\"\n        },\n        {\n            \"stateName\": \"Massachusetts\",\n            \"id\": \"64c7b1f7c19a0b6c1f789016\"\n        },\n        {\n            \"stateName\": \"Michigan\",\n            \"id\": \"64c7b1f7c19a0b6c1f789017\"\n        },\n        {\n            \"stateName\": \"Minnesota\",\n            \"id\": \"64c7b1f7c19a0b6c1f789018\"\n        },\n        {\n            \"stateName\": \"Mississippi\",\n            \"id\": \"64c7b1f7c19a0b6c1f789019\"\n        },\n        {\n            \"stateName\": \"Missouri\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901a\"\n        },\n        {\n            \"stateName\": \"Montana\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901b\"\n        },\n        {\n            \"stateName\": \"Nebraska\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901c\"\n        },\n        {\n            \"stateName\": \"Nevada\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901d\"\n        },\n        {\n            \"stateName\": \"New Hampshire\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901e\"\n        },\n        {\n            \"stateName\": \"New Jersey\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901f\"\n        },\n        {\n            \"stateName\": \"New Mexico\",\n            \"id\": \"64c7b1f7c19a0b6c1f789020\"\n        },\n        {\n            \"stateName\": \"New York\",\n            \"id\": \"64c7b1f7c19a0b6c1f789021\"\n        },\n        {\n            \"stateName\": \"North Carolina\",\n            \"id\": \"64c7b1f7c19a0b6c1f789022\"\n        },\n        {\n            \"stateName\": \"North Dakota\",\n            \"id\": \"64c7b1f7c19a0b6c1f789023\"\n        },\n        {\n            \"stateName\": \"Ohio\",\n            \"id\": \"64c7b1f7c19a0b6c1f789024\"\n        },\n        {\n            \"stateName\": \"Oklahoma\",\n            \"id\": \"64c7b1f7c19a0b6c1f789025\"\n        },\n        {\n            \"stateName\": \"Oregon\",\n            \"id\": \"64c7b1f7c19a0b6c1f789026\"\n        },\n        {\n            \"stateName\": \"Pennsylvania\",\n            \"id\": \"64c7b1f7c19a0b6c1f789027\"\n        },\n        {\n            \"stateName\": \"Rhode Island\",\n            \"id\": \"64c7b1f7c19a0b6c1f789028\"\n        },\n        {\n            \"stateName\": \"South Carolina\",\n            \"id\": \"64c7b1f7c19a0b6c1f789029\"\n        },\n        {\n            \"stateName\": \"South Dakota\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902a\"\n        },\n        {\n            \"stateName\": \"Tennessee\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902b\"\n        },\n        {\n            \"stateName\": \"Texas\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902c\"\n        },\n        {\n            \"stateName\": \"Utah\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902d\"\n        },\n        {\n            \"stateName\": \"Vermont\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902e\"\n        },\n        {\n            \"stateName\": \"Virginia\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902f\"\n        },\n        {\n            \"stateName\": \"Washington\",\n            \"id\": \"64c7b1f7c19a0b6c1f789030\"\n        },\n        {\n            \"stateName\": \"West Virginia\",\n            \"id\": \"64c7b1f7c19a0b6c1f789031\"\n        },\n        {\n            \"stateName\": \"Wisconsin\",\n            \"id\": \"64c7b1f7c19a0b6c1f789032\"\n        },\n        {\n            \"stateName\": \"Wyoming\",\n            \"id\": \"64c7b1f7c19a0b6c1f789033\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Common Table Filter Dropdown API's",
+					"item": [
+						{
+							"name": "Filter Country List || Prefix:",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}get-filter-country-list",
+									"host": [
+										"{{BASE_URL}}{{API}}get-filter-country-list"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}get-filter-country-list",
+											"host": [
+												"{{BASE_URL}}{{API}}get-filter-country-list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "242"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f2-XHaP+5EGSQTT1U0PCvpOsUoxMCU\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 12:12:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Country Filter List\",\n    \"data\": [\n        {\n            \"countryName\": \"United States\",\n            \"id\": \"64c7b1f7c19a0b6c1f789001\"\n        },\n        {\n            \"countryName\": \"Canada\",\n            \"id\": \"64c7b1f7c19a0b6c1f789034\"\n        },\n        {\n            \"countryName\": \"Australia\",\n            \"id\": \"64c7b1f7c19a0b6c1f78903f\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Filter State List || Prefix :",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"countryId\":\"64c7b1f7c19a0b6c1f789001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}get-filter-state-list",
+									"host": [
+										"{{BASE_URL}}{{API}}get-filter-state-list"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"countryId\":\"64c7b1f7c19a0b6c1f789001\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}get-filter-state-list",
+											"host": [
+												"{{BASE_URL}}{{API}}get-filter-state-list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2931"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b73-v3m9gS0lDKiZsLcQ7pOYfVdjNUQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 12:15:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"State Filter List\",\n    \"data\": [\n        {\n            \"stateName\": \"Alabama\",\n            \"id\": \"64c7b1f7c19a0b6c1f789002\"\n        },\n        {\n            \"stateName\": \"Alaska\",\n            \"id\": \"64c7b1f7c19a0b6c1f789003\"\n        },\n        {\n            \"stateName\": \"Arizona\",\n            \"id\": \"64c7b1f7c19a0b6c1f789004\"\n        },\n        {\n            \"stateName\": \"Arkansas\",\n            \"id\": \"64c7b1f7c19a0b6c1f789005\"\n        },\n        {\n            \"stateName\": \"California\",\n            \"id\": \"64c7b1f7c19a0b6c1f789006\"\n        },\n        {\n            \"stateName\": \"Colorado\",\n            \"id\": \"64c7b1f7c19a0b6c1f789007\"\n        },\n        {\n            \"stateName\": \"Connecticut\",\n            \"id\": \"64c7b1f7c19a0b6c1f789008\"\n        },\n        {\n            \"stateName\": \"Delaware\",\n            \"id\": \"64c7b1f7c19a0b6c1f789009\"\n        },\n        {\n            \"stateName\": \"Florida\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900a\"\n        },\n        {\n            \"stateName\": \"Georgia\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900b\"\n        },\n        {\n            \"stateName\": \"Hawaii\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900c\"\n        },\n        {\n            \"stateName\": \"Idaho\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900d\"\n        },\n        {\n            \"stateName\": \"Illinois\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900e\"\n        },\n        {\n            \"stateName\": \"Indiana\",\n            \"id\": \"64c7b1f7c19a0b6c1f78900f\"\n        },\n        {\n            \"stateName\": \"Iowa\",\n            \"id\": \"64c7b1f7c19a0b6c1f789010\"\n        },\n        {\n            \"stateName\": \"Kansas\",\n            \"id\": \"64c7b1f7c19a0b6c1f789011\"\n        },\n        {\n            \"stateName\": \"Kentucky\",\n            \"id\": \"64c7b1f7c19a0b6c1f789012\"\n        },\n        {\n            \"stateName\": \"Louisiana\",\n            \"id\": \"64c7b1f7c19a0b6c1f789013\"\n        },\n        {\n            \"stateName\": \"Maine\",\n            \"id\": \"64c7b1f7c19a0b6c1f789014\"\n        },\n        {\n            \"stateName\": \"Maryland\",\n            \"id\": \"64c7b1f7c19a0b6c1f789015\"\n        },\n        {\n            \"stateName\": \"Massachusetts\",\n            \"id\": \"64c7b1f7c19a0b6c1f789016\"\n        },\n        {\n            \"stateName\": \"Michigan\",\n            \"id\": \"64c7b1f7c19a0b6c1f789017\"\n        },\n        {\n            \"stateName\": \"Minnesota\",\n            \"id\": \"64c7b1f7c19a0b6c1f789018\"\n        },\n        {\n            \"stateName\": \"Mississippi\",\n            \"id\": \"64c7b1f7c19a0b6c1f789019\"\n        },\n        {\n            \"stateName\": \"Missouri\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901a\"\n        },\n        {\n            \"stateName\": \"Montana\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901b\"\n        },\n        {\n            \"stateName\": \"Nebraska\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901c\"\n        },\n        {\n            \"stateName\": \"Nevada\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901d\"\n        },\n        {\n            \"stateName\": \"New Hampshire\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901e\"\n        },\n        {\n            \"stateName\": \"New Jersey\",\n            \"id\": \"64c7b1f7c19a0b6c1f78901f\"\n        },\n        {\n            \"stateName\": \"New Mexico\",\n            \"id\": \"64c7b1f7c19a0b6c1f789020\"\n        },\n        {\n            \"stateName\": \"New York\",\n            \"id\": \"64c7b1f7c19a0b6c1f789021\"\n        },\n        {\n            \"stateName\": \"North Carolina\",\n            \"id\": \"64c7b1f7c19a0b6c1f789022\"\n        },\n        {\n            \"stateName\": \"North Dakota\",\n            \"id\": \"64c7b1f7c19a0b6c1f789023\"\n        },\n        {\n            \"stateName\": \"Ohio\",\n            \"id\": \"64c7b1f7c19a0b6c1f789024\"\n        },\n        {\n            \"stateName\": \"Oklahoma\",\n            \"id\": \"64c7b1f7c19a0b6c1f789025\"\n        },\n        {\n            \"stateName\": \"Oregon\",\n            \"id\": \"64c7b1f7c19a0b6c1f789026\"\n        },\n        {\n            \"stateName\": \"Pennsylvania\",\n            \"id\": \"64c7b1f7c19a0b6c1f789027\"\n        },\n        {\n            \"stateName\": \"Rhode Island\",\n            \"id\": \"64c7b1f7c19a0b6c1f789028\"\n        },\n        {\n            \"stateName\": \"South Carolina\",\n            \"id\": \"64c7b1f7c19a0b6c1f789029\"\n        },\n        {\n            \"stateName\": \"South Dakota\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902a\"\n        },\n        {\n            \"stateName\": \"Tennessee\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902b\"\n        },\n        {\n            \"stateName\": \"Texas\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902c\"\n        },\n        {\n            \"stateName\": \"Utah\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902d\"\n        },\n        {\n            \"stateName\": \"Vermont\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902e\"\n        },\n        {\n            \"stateName\": \"Virginia\",\n            \"id\": \"64c7b1f7c19a0b6c1f78902f\"\n        },\n        {\n            \"stateName\": \"Washington\",\n            \"id\": \"64c7b1f7c19a0b6c1f789030\"\n        },\n        {\n            \"stateName\": \"West Virginia\",\n            \"id\": \"64c7b1f7c19a0b6c1f789031\"\n        },\n        {\n            \"stateName\": \"Wisconsin\",\n            \"id\": \"64c7b1f7c19a0b6c1f789032\"\n        },\n        {\n            \"stateName\": \"Wyoming\",\n            \"id\": \"64c7b1f7c19a0b6c1f789033\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Image Upload API || Prefix:",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/Screenshot from 2024-07-01 17-03-54.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}{{API}}upload-file/1",
+							"host": [
+								"{{BASE_URL}}{{API}}upload-file"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EMPLOYEE",
+			"item": [
+				{
+					"name": "Employee Auth || Prefix: employee",
+					"item": [
+						{
+							"name": "Employee Login || Prefix: employee",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"superadmin@gmail.com\",\r\n    \"password\":\"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}employee/auth/login",
+									"host": [
+										"{{BASE_URL}}{{API}}employee"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\":\"superadmin@gmail.com\",\r\n    \"password\":\"Superadmin@123\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/login",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "506"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1fa-u5FlpwI1ogc1HN2y98osCPixjSw\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 01 Aug 2024 07:29:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Login Successful\",\n    \"data\": {\n        \"username\": \"SUPER_ADMIN\",\n        \"createdAt\": \"2024-08-01T06:23:33.122Z\",\n        \"email\": \"superadmin@gmail.com\",\n        \"isActive\": true,\n        \"isDeleted\": false,\n        \"loginRetryLimit\": 1,\n        \"updatedAt\": \"2024-08-01T07:28:59.908Z\",\n        \"userType\": 1,\n        \"id\": \"66ab29e752cead52ddc6fa86\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWIyOWU3NTJjZWFkNTJkZGM2ZmE4NiIsInVzZXJuYW1lIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3MjI0OTczNDMsImV4cCI6MTcyMzA5NzM0M30.jlUFsE7k8BEoplf01TRGxHMRIpDGP_zK8LlnU58uyQo\"\n    }\n}"
+								},
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\":\"superadmin@gmail.com\",\r\n    \"password\":\"Superadmin@1231\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/login",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "67"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"43-X5GCO0WBQe3KOKQzEFSD9LLfoK8\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 01 Aug 2024 07:29:29 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Incorrect Password\",\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Forgot Password || Prefix: employee",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"superadmin@gmail.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}employee/auth/forgot-password",
+									"host": [
+										"{{BASE_URL}}{{API}}employee"
+									],
+									"path": [
+										"auth",
+										"forgot-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "RECORD_NOT_FOUND RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"superadmin@gmail.com1\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/forgot-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"forgot-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "98"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"62-KXqVcyZ4DnWRYIzWFio80hVyxBU\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 01 Aug 2024 08:41:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"RECORD_NOT_FOUND\",\n    \"message\": \"Record(s) not found with specified criteria.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCES  RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"superadmin@gmail.com\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/forgot-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"forgot-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "157"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"9d-GOXhHugvDo54l3RtYI5fc9VNLvw\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 01 Aug 2024 08:41:48 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \" Please check your inbox. we have sent you the password reset steps.\",\n    \"data\": {\n        \"token\": \"4cf6aaf8-809d-4ae5-a4d6-63cde4818d5d\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Validate Reset Password || Prefix: employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\":\"8fc4f3cd-159a-40d2-aec8-aa5159b121af\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}employee/auth/validate-reset-password",
+									"host": [
+										"{{BASE_URL}}{{API}}employee"
+									],
+									"path": [
+										"auth",
+										"validate-reset-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/validate-reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"validate-reset-password"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "100"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"64-rTspTaajc4t28KqDP6OsxhuXrPs\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:46:45 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Insufficient request parameters! token is required.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"7348d3d4-fd54-4b00-92cb-43a940b9b98cc\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/validate-reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"validate-reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "57"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"39-OrH4BYYkFIKTJRybs+0lcjZHXPs\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:47:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"Invalid Link\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"7348d3d4-fd54-4b00-92cb-43a940b9b98c\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/validate-reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"validate-reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "55"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37-PZSAHhg0LQ5DVL8aaVotOT52ZEE\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:47:53 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Valid Link\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"509fb788-ba58-4ace-ab74-d734beb652b7\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/validate-reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"validate-reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "91"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5b-ZzyecmUCqSubPs9/F0Jvth4EJPU\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:59:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"Your reset password link is expired or invalid\",\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Reset Password || Prefix: employee",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\":\"46576dff-7be8-4bd0-989d-693bb11bc557\",\r\n    \"newPassword\":\"Rahul@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}{{API}}employee/auth/reset-password",
+									"host": [
+										"{{BASE_URL}}{{API}}employee"
+									],
+									"path": [
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BAD_REQUEST RESPONSE",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"reset-password"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "116"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"74-m1DG6f8B2IwcPTNGsVOU29tKhms\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 10:52:07 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Insufficient request parameters! token and newPassword is required.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "FAILURE RESPONSE",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"509fb788-ba58-4ace-ab74-d734beb652b7\",\r\n    \"newPassword\":\"Rahul@123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "91"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5b-ZzyecmUCqSubPs9/F0Jvth4EJPU\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 11:01:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"FAILURE\",\n    \"message\": \"Your reset password link is expired or invalid\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "SUCCESS RESPONSE",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\":\"b3772c51-727b-4416-8185-204c682d01c4\",\r\n    \"newPassword\":\"Rahul@123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}{{API}}super-admin/auth/reset-password",
+											"host": [
+												"{{BASE_URL}}{{API}}super-admin"
+											],
+											"path": [
+												"auth",
+												"reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "72"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"48-6pLh9WdYNEyaCI7sG51J3ZIOC1o\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 21 Feb 2024 11:03:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Password reset successfully\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://192.168.1.19:3050/",
+			"type": "string"
+		},
+		{
+			"key": "API",
+			"value": "api/",
+			"type": "string"
+		},
+		{
+			"key": "ADMINID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "BearerToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

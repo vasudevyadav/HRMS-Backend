@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payslip - <%= data.salaryMonth %> <%= data.salaryYear %></title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        color: #000;
+        background-color: #fff;
+      }
+      .logo {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .company-name {
+        margin-bottom: 10px;
+      }
+      .payslip {
+        max-width: 800px;
+        margin: 0 auto;
+        /* border: 1px solid #ccc; */
+        padding: 20px;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+      }
+      .header {
+        /* text-align: center; */
+        margin-bottom: 20px;
+        /* border-bottom: 2px solid #333; */
+        padding-bottom: 10px;
+      }
+
+      .company-address {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+      .payslip-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      .employee-details {
+        display: flex;
+        justify-content: space-between;
+      }
+      .left-employee-details .right-employee-details {
+        width: 50%;
+      }
+      .fontsizep {
+        font-size: 13px;
+      }
+      .employee-detail {
+        width: 50%;
+        font-size: 12px;
+        margin-bottom: -10px;
+      }
+      .section-title1 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .section-title2 {
+        font-size: 16px;
+
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+      }
+      .item1 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+        font-size: 12px;
+      }
+      .earnings-deductions {
+        display: flex;
+        margin-bottom: 20px;
+        gap: 20px;
+      }
+      .earnings,
+      .deductions {
+        width: 50%;
+        /* padding: 0 10px; */
+      }
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        font-size: 12px;
+      }
+
+      .total {
+        /* font-weight: bold; */
+        border-top: 1px solid #ddd;
+        padding-top: 5px;
+        margin-top: 5px;
+        padding-bottom: 10px;
+      }
+      .totalend {
+        padding-top: 5px;
+        margin-top: 5px;
+      }
+      .net-pay {
+        /* background-color: #f0f0f0; */
+        padding: 15px;
+        margin-bottom: 20px;
+        /* border: 1px solid #ddd; */
+      }
+      .net-pay-amount {
+        font-size: 15px;
+        font-weight: bold;
+        text-align: right;
+      }
+      .note {
+        /* font-style: italic; */
+        padding: 10px;
+        /* border-top: 1px solid #ddd; */
+      }
+      .negative {
+        color: #d9534f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="payslip">
+      <div class="logo">
+        <div>
+          <img src="https://gohashinclude.s3.ap-south-1.amazonaws.com/gohash-logo.png" alt="Company Logo" style="width: 60px; height: auto" />
+        </div>
+        <div>
+          <p>Payslip <%= data.salaryMonth %> <%= data.salaryYear %></p>
+        </div>
+      </div>
+      <div class="header">
+        <div class="company-name">GOHASHINCLUDE PVT. LTD.</div>
+        <div class="company-address">Nirman Nagar E, P.No.-31, 1st Floor,</div>
+        <div class="company-address">Shree Krishna Tower, Ajmer Rd, Opp.</div>
+        <div class="company-address">Asopa Hospital, Jaipur, Rajasthan 302024</div>
+        <div class="company-address"><p>JAIPUR, 302024</p></div>
+        <div class="company-address">INDIA</div>
+      </div>
+
+      <div class="section-title1">Employee Pay Summary</div>
+      <div class="employee-details">
+        <div class="left-employee-details">
+          <div class="fontsizep">
+            <p>Employee Name: <span><%= data.EmployeeName %></span></p>
+          </div>
+          <div class="fontsizep">
+            <p>Pay Period: <span><%= data.salaryMonth %> <%= data.salaryYear %></span></p>
+          </div>
+          <div class="fontsizep">
+            <p>Loss of Pay Days: <span><%= data.Absent %></span></p>
+          </div>
+        </div>
+        <div class="right-employee-details">
+          <div class="fontsizep">
+            <p>Employee ID: <span><%= data.EmployeeCode %></span></p>
+          </div>
+          <div class="fontsizep">
+            <p>Paid Days: <span><%= data.Present %></span></p>
+          </div>
+          <div class="fontsizep">
+            <p>Pay Date: <span><%= data.salaryMonth %> <%= data.salaryYear %></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title2" style="border: none; padding-top: 20px">Income Details</div>
+      <div class="earnings-deductions">
+        <div class="earnings">
+          <div class="section-title2">Earnings</div>
+          <% Object.entries(data.salaryBreakdown).forEach(([key, value]) => { %>
+            <div class="item1">
+              <div><%= key %></div>
+              <div>₹ <%= value !== null ? value.toFixed(2) : '0.00' %></div>
+            </div>
+          <% }) %>
+          <div class="item total">
+            <div style="padding-top: 10px">Gross Earnings</div>
+            <p>₹ <%= data.grossEarnings %></p>
+          </div>
+        </div>
+        <div class="deductions">
+          <div class="section-title2">Deductions</div>
+          <% data.deductions.forEach(deduction => { %>
+            <div class="item">
+              <div><%= deduction.name %></div>
+              <div>₹ <%= deduction.amount !== null ? deduction.amount.toFixed(2) : '0.00' %></div>
+            </div>
+          <% }) %>
+
+          <div class="item total">
+            <p>Total Deductions</p>
+            <p>₹ <%= data.salaryDetails.deduction.toFixed(2) %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="totalend">Total Net Payable</div>
+      <div class="net-pay">
+        <div class="item">
+          <div style="margin-left: -15px">Gross Earnings - Total Deductions</div>
+          <div class="net-pay-amount negative">₹ <%= data.netPayable.toFixed(2) %></div>
+        </div>
+      </div>
+
+      <div class="note">
+        <p>
+          Note:
+          <span><%= data.note %></span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,991 @@
+openapi: 3.0.0
+info:
+  title: HRMS
+  version: 1.0.0
+servers:
+  - url: http://{{base_url}}{{api}}super-admin
+  - url: http://{{base_url}}{{api}}get-country-list
+  - url: http://{{base_url}}{{api}}get-state-list
+  - url: http://{{base_url}}{{api}}get-filter-country-list
+  - url: http://{{base_url}}{{api}}get-filter-state-list
+  - url: http://{{base_url}}{{api}}upload-file
+  - url: http://{{base_url}}{{api}}employee
+components:
+  securitySchemes:
+    noauthAuth:
+      type: http
+      scheme: noauth
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
+tags:
+  - name: SUPER-ADMIN
+  - name: 'SUPER-ADMIN > Super Admin Auth || Prefix: super-admin'
+  - name: 'SUPER-ADMIN > Employee || Prefix: employee'
+  - name: SUPER-ADMIN > Common Dropdown APIS
+  - name: SUPER-ADMIN > Common Table Filter Dropdown API's
+  - name: EMPLOYEE
+  - name: 'EMPLOYEE > Employee Auth || Prefix: employee'
+paths:
+  /auth/login:
+    post:
+      tags:
+        - 'EMPLOYEE > Employee Auth || Prefix: employee'
+      summary: 'Employee Login || Prefix: employee'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: superadmin@gmail.com
+                password: Admin@123
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '506'
+            ETag:
+              schema:
+                type: string
+                example: W/"1fa-u5FlpwI1ogc1HN2y98osCPixjSw"
+            Date:
+              schema:
+                type: string
+                example: Thu, 01 Aug 2024 07:29:03 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Login Successful
+                data:
+                  username: SUPER_ADMIN
+                  createdAt: '2024-08-01T06:23:33.122Z'
+                  email: superadmin@gmail.com
+                  isActive: true
+                  isDeleted: false
+                  loginRetryLimit: 1
+                  updatedAt: '2024-08-01T07:28:59.908Z'
+                  userType: 1
+                  id: 66ab29e752cead52ddc6fa86
+                  token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWIyOWU3NTJjZWFkNTJkZGM2ZmE4NiIsInVzZXJuYW1lIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3MjI0OTczNDMsImV4cCI6MTcyMzA5NzM0M30.jlUFsE7k8BEoplf01TRGxHMRIpDGP_zK8LlnU58uyQo
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '67'
+            ETag:
+              schema:
+                type: string
+                example: W/"43-X5GCO0WBQe3KOKQzEFSD9LLfoK8"
+            Date:
+              schema:
+                type: string
+                example: Thu, 01 Aug 2024 07:29:29 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: BAD_REQUEST
+                message: Incorrect Password
+                data: null
+  /auth/forgot-password:
+    post:
+      tags:
+        - 'EMPLOYEE > Employee Auth || Prefix: employee'
+      summary: 'Forgot Password || Prefix: employee'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: superadmin@gmail.com
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '98'
+            ETag:
+              schema:
+                type: string
+                example: W/"62-KXqVcyZ4DnWRYIzWFio80hVyxBU"
+            Date:
+              schema:
+                type: string
+                example: Thu, 01 Aug 2024 08:41:30 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: RECORD_NOT_FOUND RESPONSE
+                  value:
+                    status: RECORD_NOT_FOUND
+                    message: Record(s) not found with specified criteria.
+                    data: null
+                example-1:
+                  summary: SUCCES  RESPONSE
+                  value:
+                    status: SUCCESS
+                    message: ' Please check your inbox. we have sent you the password reset steps.'
+                    data:
+                      token: 4cf6aaf8-809d-4ae5-a4d6-63cde4818d5d
+  /auth/validate-reset-password:
+    post:
+      tags:
+        - 'EMPLOYEE > Employee Auth || Prefix: employee'
+      summary: 'Validate Reset Password || Prefix: employee'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                token: 8fc4f3cd-159a-40d2-aec8-aa5159b121af
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '57'
+            ETag:
+              schema:
+                type: string
+                example: W/"39-OrH4BYYkFIKTJRybs+0lcjZHXPs"
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Feb 2024 10:47:31 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: FAILURE RESPONSE
+                  value:
+                    status: FAILURE
+                    message: Invalid Link
+                    data: null
+                example-1:
+                  summary: SUCCESS RESPONSE
+                  value:
+                    status: SUCCESS
+                    message: Valid Link
+                    data: null
+                example-2:
+                  summary: FAILURE RESPONSE
+                  value:
+                    status: FAILURE
+                    message: Your reset password link is expired or invalid
+                    data: null
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '100'
+            ETag:
+              schema:
+                type: string
+                example: W/"64-rTspTaajc4t28KqDP6OsxhuXrPs"
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Feb 2024 10:46:45 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: BAD_REQUEST
+                message: Insufficient request parameters! token is required.
+                data: null
+  /auth/reset-password:
+    put:
+      tags:
+        - 'EMPLOYEE > Employee Auth || Prefix: employee'
+      summary: 'Reset Password || Prefix: employee'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                token: 46576dff-7be8-4bd0-989d-693bb11bc557
+                newPassword: Rahul@123
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '91'
+            ETag:
+              schema:
+                type: string
+                example: W/"5b-ZzyecmUCqSubPs9/F0Jvth4EJPU"
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Feb 2024 11:01:18 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: FAILURE RESPONSE
+                  value:
+                    status: FAILURE
+                    message: Your reset password link is expired or invalid
+                    data: null
+                example-1:
+                  summary: SUCCESS RESPONSE
+                  value:
+                    status: SUCCESS
+                    message: Password reset successfully
+                    data: null
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '116'
+            ETag:
+              schema:
+                type: string
+                example: W/"74-m1DG6f8B2IwcPTNGsVOU29tKhms"
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Feb 2024 10:52:07 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: BAD_REQUEST
+                message: >-
+                  Insufficient request parameters! token and newPassword is
+                  required.
+                data: null
+  /auth/get-user-details:
+    post:
+      tags:
+        - 'SUPER-ADMIN > Super Admin Auth || Prefix: super-admin'
+      summary: Get User Details
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWIyOWU3NTJjZWFkNTJkZGM2ZmE4NiIsInVzZXJuYW1lIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3MjI1MDI5MzAsImV4cCI6MTcyMzEwMjkzMH0.vO_nVRFc5WtAYt0XkJg5Y9sNNfOyx2PJufLE-kEKsQQ
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '180'
+            ETag:
+              schema:
+                type: string
+                example: W/"b4-tlcMINBScoEsFxSEiKf7CRo/0zs"
+            Date:
+              schema:
+                type: string
+                example: Thu, 01 Aug 2024 09:09:12 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  username: SUPER_ADMIN
+                  email: superadmin@gmail.com
+                  userType: 1
+                  id: 66ab29e752cead52ddc6fa86
+  /auth/change-password:
+    put:
+      tags:
+        - 'SUPER-ADMIN > Super Admin Auth || Prefix: super-admin'
+      summary: Change Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                oldPassword: Rahul@123
+                newPassword: Admin@123
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWIyOWU3NTJjZWFkNTJkZGM2ZmE4NiIsInVzZXJuYW1lIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3MjI1MDI5MzAsImV4cCI6MTcyMzEwMjkzMH0.vO_nVRFc5WtAYt0XkJg5Y9sNNfOyx2PJufLE-kEKsQQ
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '70'
+            ETag:
+              schema:
+                type: string
+                example: W/"46-7Q0D63IL6TIxPEHOgyG+xhRewtg"
+            Date:
+              schema:
+                type: string
+                example: Thu, 28 Mar 2024 05:05:33 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: FAILURE RESPONSE
+                  value:
+                    status: FAILURE
+                    message: Old password is incorrect
+                    data: null
+                example-1:
+                  summary: SUCCESS RESPONSE
+                  value:
+                    status: SUCCESS
+                    message: Password updated successfully.
+                    data: null
+  /employee/create-employee:
+    post:
+      tags:
+        - 'SUPER-ADMIN > Employee || Prefix: employee'
+      summary: 'Step 5 : Create Employee || Prefix: employee'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 66adff330def14fba4d0d3ea
+                document:
+                  - documentName: PAN CARD
+                    documentFileName: 1722679283094.png
+                stepNumber: '5'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '106'
+            ETag:
+              schema:
+                type: string
+                example: W/"6a-E29xt7VoWGMDFjcn8sit6kQAeqA"
+            Date:
+              schema:
+                type: string
+                example: Sat, 03 Aug 2024 06:22:35 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: FAILURE RESPONSE
+                  value:
+                    status: FAILURE
+                    message: >-
+                      ESI number is invalid. It should be a 10-digit numeric
+                      value.
+                    data: null
+                example-1:
+                  summary: FAILURE RESPONSE
+                  value:
+                    status: FAILURE
+                    message: >-
+                      PF number is invalid. It should follow one of the accepted
+                      formats.
+                    data: null
+                example-2:
+                  summary: SUCCESS RESPONSE
+                  value:
+                    status: SUCCESS
+                    message: Document Details Updated Successfully
+                    data:
+                      document:
+                        - documentName: PAN CARD
+                          documentFileName: 1722678111335.png
+                          _id: 66adfbfa7d65423f8e88ca82
+                          id: 66adfbfa7d65423f8e88ca82
+                      id: 66add383622e081e6e271180
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '72'
+            ETag:
+              schema:
+                type: string
+                example: W/"48-g41bUFz3xLunMOrQ/ypHFIydlC0"
+            Date:
+              schema:
+                type: string
+                example: Sat, 03 Aug 2024 06:22:00 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: BAD_REQUEST
+                message: stepNumber is required.
+                data: null
+  /employee/get-employee-details/66adff330def14fba4d0d3ea:
+    get:
+      tags:
+        - 'SUPER-ADMIN > Employee || Prefix: employee'
+      summary: 'Get Employee Details || Prefix: super-admin/employee'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1808'
+            ETag:
+              schema:
+                type: string
+                example: W/"710-jlRk0MjLVh+UgeKfqKWm4s8eKPw"
+            Date:
+              schema:
+                type: string
+                example: Sat, 03 Aug 2024 10:34:33 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  _id: 66adff330def14fba4d0d3ea
+                  firstName: Brock
+                  dob: '2024-08-01T18:30:00.000Z'
+                  employeeCode: Consequatur enim est
+                  departmentName: a1c345e2-69b5-413b-94b9-b82a33c8c7b1
+                  designation: 'Autem rem obcaecati '
+                  aadharNumber: ''
+                  maritalStatus: a5bcdc02-b448-46f0-a3d2-e390746e6bf1
+                  religion: a3031576-f5c2-41a2-8eb6-8199ded98991
+                  castCategory: 3f275f4a-18b5-469b-a4f2-db5762bd8858
+                  dateOfProfession: '2024-08-12T18:30:00.000Z'
+                  dateOfJoining: '2024-08-09T18:30:00.000Z'
+                  primaryNumber: '164'
+                  secondaryNumber: '400'
+                  primaryEmail: hixykoxe@mailinator.com
+                  secondaryEmail: hixykoxe@mailinator.com
+                  emergencyContactNumber: '547'
+                  gender: ''
+                  setpNumber: 0
+                  completedStep: 1,5,2,3,4
+                  userType: 2
+                  currentAddressLine1: 123 Main St
+                  currentAddressLine2: Apt 4B
+                  currentCityName: '123456'
+                  currentCountryId:
+                    _id: 64c7b1f7c19a0b6c1f789001
+                    countryName: United States
+                  currentStateId:
+                    _id: 64c7b1f7c19a0b6c1f789002
+                    stateName: Alabama
+                  currentPincode: '123456'
+                  sameAsPermanent: false
+                  permanentAddressLine1: 456 Elm St
+                  permanentAddressLine2: Suite 7
+                  permanentCityName: '654321'
+                  permanentCountryId:
+                    _id: 64c7b1f7c19a0b6c1f789001
+                    countryName: United States
+                  permanentStateId:
+                    _id: 64c7b1f7c19a0b6c1f789003
+                    stateName: Alaska
+                  permanentPincode: '654321'
+                  esiNumber: '1234567890'
+                  pfNumber: MH/123/1234567
+                  perMonthSalary: '50000'
+                  monthYearSalary: aug - 2024
+                  bankName: State Bank of India
+                  accountHolderName: John Doe
+                  accountNumber: '1234567890'
+                  ifscCode: SBIN0001234
+                  branch: Main Branch
+                  isActive: true
+                  document:
+                    - documentName: PAN CARD
+                      documentFileName: 1722679283094.png
+                      _id: 66ae039367ecda244b4c0a35
+                  createdAt: '2024-08-03T09:58:11.903Z'
+                  __v: 0
+  /:
+    post:
+      tags:
+        - SUPER-ADMIN > Common Table Filter Dropdown API's
+      summary: 'Filter State List || Prefix :'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                countryId: 64c7b1f7c19a0b6c1f789001
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '2931'
+            ETag:
+              schema:
+                type: string
+                example: W/"b73-v3m9gS0lDKiZsLcQ7pOYfVdjNUQ"
+            Date:
+              schema:
+                type: string
+                example: Fri, 02 Aug 2024 12:15:20 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: State Filter List
+                data:
+                  - stateName: Alabama
+                    id: 64c7b1f7c19a0b6c1f789002
+                  - stateName: Alaska
+                    id: 64c7b1f7c19a0b6c1f789003
+                  - stateName: Arizona
+                    id: 64c7b1f7c19a0b6c1f789004
+                  - stateName: Arkansas
+                    id: 64c7b1f7c19a0b6c1f789005
+                  - stateName: California
+                    id: 64c7b1f7c19a0b6c1f789006
+                  - stateName: Colorado
+                    id: 64c7b1f7c19a0b6c1f789007
+                  - stateName: Connecticut
+                    id: 64c7b1f7c19a0b6c1f789008
+                  - stateName: Delaware
+                    id: 64c7b1f7c19a0b6c1f789009
+                  - stateName: Florida
+                    id: 64c7b1f7c19a0b6c1f78900a
+                  - stateName: Georgia
+                    id: 64c7b1f7c19a0b6c1f78900b
+                  - stateName: Hawaii
+                    id: 64c7b1f7c19a0b6c1f78900c
+                  - stateName: Idaho
+                    id: 64c7b1f7c19a0b6c1f78900d
+                  - stateName: Illinois
+                    id: 64c7b1f7c19a0b6c1f78900e
+                  - stateName: Indiana
+                    id: 64c7b1f7c19a0b6c1f78900f
+                  - stateName: Iowa
+                    id: 64c7b1f7c19a0b6c1f789010
+                  - stateName: Kansas
+                    id: 64c7b1f7c19a0b6c1f789011
+                  - stateName: Kentucky
+                    id: 64c7b1f7c19a0b6c1f789012
+                  - stateName: Louisiana
+                    id: 64c7b1f7c19a0b6c1f789013
+                  - stateName: Maine
+                    id: 64c7b1f7c19a0b6c1f789014
+                  - stateName: Maryland
+                    id: 64c7b1f7c19a0b6c1f789015
+                  - stateName: Massachusetts
+                    id: 64c7b1f7c19a0b6c1f789016
+                  - stateName: Michigan
+                    id: 64c7b1f7c19a0b6c1f789017
+                  - stateName: Minnesota
+                    id: 64c7b1f7c19a0b6c1f789018
+                  - stateName: Mississippi
+                    id: 64c7b1f7c19a0b6c1f789019
+                  - stateName: Missouri
+                    id: 64c7b1f7c19a0b6c1f78901a
+                  - stateName: Montana
+                    id: 64c7b1f7c19a0b6c1f78901b
+                  - stateName: Nebraska
+                    id: 64c7b1f7c19a0b6c1f78901c
+                  - stateName: Nevada
+                    id: 64c7b1f7c19a0b6c1f78901d
+                  - stateName: New Hampshire
+                    id: 64c7b1f7c19a0b6c1f78901e
+                  - stateName: New Jersey
+                    id: 64c7b1f7c19a0b6c1f78901f
+                  - stateName: New Mexico
+                    id: 64c7b1f7c19a0b6c1f789020
+                  - stateName: New York
+                    id: 64c7b1f7c19a0b6c1f789021
+                  - stateName: North Carolina
+                    id: 64c7b1f7c19a0b6c1f789022
+                  - stateName: North Dakota
+                    id: 64c7b1f7c19a0b6c1f789023
+                  - stateName: Ohio
+                    id: 64c7b1f7c19a0b6c1f789024
+                  - stateName: Oklahoma
+                    id: 64c7b1f7c19a0b6c1f789025
+                  - stateName: Oregon
+                    id: 64c7b1f7c19a0b6c1f789026
+                  - stateName: Pennsylvania
+                    id: 64c7b1f7c19a0b6c1f789027
+                  - stateName: Rhode Island
+                    id: 64c7b1f7c19a0b6c1f789028
+                  - stateName: South Carolina
+                    id: 64c7b1f7c19a0b6c1f789029
+                  - stateName: South Dakota
+                    id: 64c7b1f7c19a0b6c1f78902a
+                  - stateName: Tennessee
+                    id: 64c7b1f7c19a0b6c1f78902b
+                  - stateName: Texas
+                    id: 64c7b1f7c19a0b6c1f78902c
+                  - stateName: Utah
+                    id: 64c7b1f7c19a0b6c1f78902d
+                  - stateName: Vermont
+                    id: 64c7b1f7c19a0b6c1f78902e
+                  - stateName: Virginia
+                    id: 64c7b1f7c19a0b6c1f78902f
+                  - stateName: Washington
+                    id: 64c7b1f7c19a0b6c1f789030
+                  - stateName: West Virginia
+                    id: 64c7b1f7c19a0b6c1f789031
+                  - stateName: Wisconsin
+                    id: 64c7b1f7c19a0b6c1f789032
+                  - stateName: Wyoming
+                    id: 64c7b1f7c19a0b6c1f789033
+  /1:
+    post:
+      tags:
+        - SUPER-ADMIN
+      summary: 'Image Upload API || Prefix:'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: string
+                  format: binary
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
